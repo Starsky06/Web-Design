@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const choices = document.querySelectorAll(".recomendationChoice");
+            const images = document.querySelectorAll(".recommendationImage");
+
+            const imageSets = {
+                city: [
+                    { src: "images/city1.jpeg", alt: "City Image 1" },
+                    { src: "images/city2.jpeg", alt: "City Image 2" },
+                    { src: "images/city3.jpeg", alt: "City Image 3" },
+                    { src: "images/city4.jpeg", alt: "City Image 4" }
+                ],
+                history: [
+                    { src: "images/history1.jpeg", alt: "History Image 1" },
+                    { src: "images/history2.jpeg", alt: "History Image 2" },
+                    { src: "images/history3.jpeg", alt: "History Image 3" },
+                    { src: "images/history4.jpeg", alt: "History Image 4" }
+                ],
+                beach: [
+                    { src: "images/beach1.jpeg", alt: "Beach Image 1" },
+                    { src: "images/beach2.jpeg", alt: "Beach Image 2" },
+                    { src: "images/beach3.jpeg", alt: "Beach Image 3" },
+                    { src: "images/beach4.jpeg", alt: "Beach Image 4" }
+                ],
+                adventure: [
+                    { src: "images/adventure1.jpeg", alt: "Adventure Image 1" },
+                    { src: "images/adventure2.jpeg", alt: "Adventure Image 2" },
+                    { src: "images/adventure3.jpeg", alt: "Adventure Image 3" },
+                    { src: "images/adventure4.jpeg", alt: "Adventure Image 4" }
+                ]
+            };
+
+            function setDefaultImages() {
+                images.forEach((img, index) => {
+                    img.src = imageSets['city'][index].src;
+                    img.alt = imageSets['city'][index].alt;
+                });
+            }
+
+            setDefaultImages();
+
+            choices.forEach(choice => {
+                choice.addEventListener("click", function () {
+                    choices.forEach(btn => btn.classList.remove('active'));
+
+                    this.classList.add('active');
+
+                    const selectedChoice = this.getAttribute("data-choice");
+
+                    images.forEach((img, index) => {
+                        img.src = imageSets[selectedChoice][index].src;
+                        img.alt = imageSets[selectedChoice][index].alt;
+                    });
+                });
+            });
+
+            images.forEach(image => {
+                image.addEventListener("click", function () {
+                    const imgSrc = this.src;
+                    const modalImage = document.getElementById("modalImage");
+
+                    modalImage.src = imgSrc;
+
+                    var myModal = new bootstrap.Modal(document.getElementById('imageModal'));
+                    myModal.show();
+                });
+            });
+
+            document.getElementById('loginIcon').addEventListener('click', function (event) {
+                event.preventDefault();
+                var myModal = new bootstrap.Modal(document.getElementById('loginModal'), {
+                    keyboard: false
+                });
+                myModal.show();
+            });
+
+            function setCookie(cname, cvalue, exdays) {
+                const d = new Date();
+                d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+                let expires = "expires=" + d.toUTCString();
+                document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+            }
+
+            function getCookie(cname) {
+                let name = cname + "=";
+                let decodedCookie = decodeURIComponent(document.cookie);
+                let ca = decodedCookie.split(';');
+                for (let i = 0; i < ca.length; i++) {
+                    let c = ca[i];
+                    while (c.charAt(0) == ' ') {
+                        c = c.substring(1);
+                    }
+                    if (c.indexOf(name) == 0) {
+                        return c.substring(name.length, c.length);
+                    }
+                }
+                return "";
+            }
+
+            const userEmail = getCookie("userEmail");
+            if (userEmail !== "") {
+                alert("Welcome back, " + userEmail + "!");
+            }
+
+            document.querySelector('#loginModal form').addEventListener('submit', function (event) {
+                event.preventDefault();
+                const email = document.getElementById('email').value;
+                if (email) {
+                    setCookie("userEmail", email, 30);
+                    alert("Welcome, " + email + "!");
+                    var myModalEl = document.getElementById('loginModal');
+                    var modal = bootstrap.Modal.getInstance(myModalEl);
+                    modal.hide();
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="Home.html">
+                <img class="logo" src="images/logo.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li>
+                        <a class="nav-link active" aria-current="page" href="Home.html">Home</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="about.html">About Malaysia</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="TravelTips.html">Travel Tips</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="adventures.html">Adventure Activities</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="faq.html">FAQs</a>
+                    </li>
+                </ul>
+                <a class="nav-link" href="#" id="loginIcon">
+                    <i class="bi bi-person-circle"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="topBackground">
+        <div class="textContainer">
+            <h1>Welcome to Malaysia</h1>
+            <p class="topDescription">Let you MYEXPLORE discover the beauty, culture, and adventure that Malaysia has to
+                offer.</p>
+        </div>
+    </div>
+
+    <div class="searchContainer">
+        <div class="container">
+            <form class="row g-3 align-items-center justify-content-center">
+                <div class="col-md-3 col-sm-6 d-flex align-items-center">
+                    <label for="place" class="searchLabel">Place:</label>
+                    <input type="text" id="place" class="form-control searchLine" placeholder="Enter a place">
+                </div>
+                <div class="col-md-3 col-sm-6 d-flex align-items-center">
+                    <label for="date" class="searchLabel">Date:</label>
+                    <input type="date" id="date" class="form-control searchLine">
+                </div>
+                <div class="col-md-3 col-sm-6 d-flex align-items-center">
+                    <label for="people" class="searchLabel">People:</label>
+                    <input type="number" id="people" class="form-control searchLine" placeholder="Number of people">
+                </div>
+                <div class="col-auto d-flex justify-content-center align-items-center">
+                    <button type="submit" class="btn btn-primary searchButton"><i class="bi bi-search"></i></button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="recommendationContainer mt-4">
+        <div class="container text-center">
+            <h2 class="mb-4">Popular Recommendation</h2>
+
+            <div class="btn-group mb-4" role="group" aria-label="Recommendation choices">
+                <button type="button" class="btn btn-outline-primary recomendationChoice active"
+                    data-choice="city">City</button>
+                <button type="button" class="btn btn-outline-primary recomendationChoice"
+                    data-choice="history">History</button>
+                <button type="button" class="btn btn-outline-primary recomendationChoice"
+                    data-choice="beach">Beach</button>
+                <button type="button" class="btn btn-outline-primary recomendationChoice"
+                    data-choice="adventure">Adventure</button>
+            </div>
+
+            <div class="recomendationImageContainer">
+                <div class="col">
+                    <img src="images/city1.png" class="img-fluid recommendationImage" alt="City Image 1">
+                </div>
+                <div class="col">
+                    <img src="images/city2.png" class="img-fluid recommendationImage" alt="City Image 2">
+                </div>
+                <div class="col">
+                    <img src="images/city3.png" class="img-fluid recommendationImage" alt="City Image 3">
+                </div>
+                <div class="col">
+                    <img src="images/city4.png" class="img-fluid recommendationImage" alt="City Image 4">
+                </div>
+            </div>
+
+            <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content bg-transparent border-0">
+                        <div class="modal-body p-0">
+                            <img id="modalImage" src="" alt="Selected Image" class="img-fluid rounded" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-primary mt-4 mb-4 btnShow">Show All</button>
+        </div>
+    </div>
+
+    <div class="penangContainer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h2 class="penangTitle">Penang</h2>
+                    <p class="penangDescription">
+                        Penang is a beautiful island state located on the northwest coast of Peninsular Malaysia.
+                        Known for its rich history, diverse culture, and stunning landscapes, Penang is a must-visit
+                        destination for travelers.
+                    </p>
+                    <button type="button" class="btn btn-primary btnExplore">Explore more</button>
+                </div>
+
+                <div class="col-md-9">
+                    <div id="penangCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <img src="images/Penang1.jpeg" class="d-block w-100 penangImage"
+                                            alt="Penang Image 1">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img src="images/Penang2.jpeg" class="d-block w-100 penangImage"
+                                            alt="Penang Image 2">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img src="images/Penang3.jpeg" class="d-block w-100 penangImage"
+                                            alt="Penang Image 3">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <img src="images/Penang4.jpeg" class="d-block w-100 penangImage"
+                                            alt="Penang Image 4">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img src="images/Penang5.jpeg" class="d-block w-100 penangImage"
+                                            alt="Penang Image 5">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img src="images/Penang6.jpeg" class="d-block w-100 penangImage"
+                                            alt="Penang Image 6">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#penangCarousel"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#penangCarousel"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="terengganuContainer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div id="terengganuCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <img src="images/Terengganu1.jpeg" class="d-block w-100 terengganuImage"
+                                            alt="Terengganu Image 1">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img src="images/Terengganu2.jpeg" class="d-block w-100 terengganuImage"
+                                            alt="Terengganu Image 2">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img src="images/Terengganu3.jpeg" class="d-block w-100 terengganuImage"
+                                            alt="Terengganu Image 3">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <img src="images/Terengganu4.jpeg" class="d-block w-100 terengganuImage"
+                                            alt="Terengganu Image 4">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img src="images/Terengganu5.jpeg" class="d-block w-100 terengganuImage"
+                                            alt="Terengganu Image 5">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img src="images/Terengganu6.jpeg" class="d-block w-100 terengganuImage"
+                                            alt="Terengganu Image 6">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#terengganuCarousel"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#terengganuCarousel"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <h2 class="terengganuTitle">Terengganu</h2>
+                    <p class="terengganuDescription">
+                        Terengganu, located on the eastern coast of Peninsular Malaysia. It is home to some of the most
+                        beautiful
+                        islands in Malaysia, including the famous Redang and Perhentian Islands.
+                    </p>
+                    <div class="text-md-end">
+                        <button type="button" class="btn btn-primary btnExplore">Explore more</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="serviceContainer mt-2">
+        <div class="container text-center">
+            <h2 class="mb-3">Our Services</h2>
+            <p class="serviceIntro mb-5">MYEXPLORE has the best services in Malaysia.</p>
+
+            <div class="row justify-content-center mb-4">
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <a href="services.html" class="serviceLink">
+                        <div class="serviceBox">
+                            <div class="serviceCircle">1</div>
+                            <img src="images/tourguide.jpeg" alt="Tour Guide" class="serviceImage">
+                            <h4 class="serviceTitle mt-3">Tour Guide</h4>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <a href="services.html" class="serviceLink">
+                        <div class="serviceBox">
+                            <div class="serviceCircle">2</div>
+                            <img src="images/hotel.jpeg" alt="Hotel" class="serviceImage">
+                            <h4 class="serviceTitle mt-3">Hotel</h4>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <a href="services.html" class="serviceLink">
+                        <div class="serviceBox">
+                            <div class="serviceCircle">3</div>
+                            <img src="images/transport.jpeg" alt="Transport" class="serviceImage">
+                            <h4 class="serviceTitle mt-3">Transport</h4>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <a href="services.html" class="serviceLink">
+                        <div class="serviceBox">
+                            <div class="serviceCircle">4</div>
+                            <img src="images/package.jpeg" alt="Package" class="serviceImage">
+                            <h4 class="serviceTitle mt-3">Package</h4>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <a href="traveltips.html" class="serviceLink">
+                        <div class="serviceBox">
+                            <div class="serviceCircle">5</div>
+                            <img src="images/travelTips.jpeg" alt="Travel Tips" class="serviceImage">
+                            <h4 class="serviceTitle mt-3">Travel Tips</h4>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyrightContainer">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="images/logo.png" alt="Logo" class="copyrightLogo mb-3">
+                    <p class="copyrightText">© 2024 MYEXPLORE. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
