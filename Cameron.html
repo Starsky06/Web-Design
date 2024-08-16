@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Gallery</title>
+    <link rel="stylesheet" href="css/Cameron.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="slide">
+            <div class="item" style="background-image: url(images/image22.jpg);">
+                <div class="content">
+                    <div class="name">Cameron Highlands</div>
+                    <div class="des">Cameron Highlands: cool climate, scenic tea plantations.</div>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(images/image21.jpg);">
+                <div class="content">
+                    <div class="name">Flower Gardens</div>
+                    <div class="des">Colorful, well-maintained floral displays.</div>
+                    <button><a href="https://en.wikipedia.org/wiki/Cameron_Highlands">See More</a></button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(images/image23.jpg);">
+                <div class="content">
+                    <div class="name">Cool Climate</div>
+                    <div class="des">Refreshing weather year-round</div>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(images/image24.jpg);">
+                <div class="content">
+                    <div class="name">Tea Plantations</div>
+                    <div class="des">Scenic, lush green tea fields.</div>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(images/image25.jpg);">
+                <div class="content">
+                    <div class="name">Strawberry Farms</div>
+                    <div class="des">Pick fresh strawberries on-site.</div>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(images/image26.jpg);">
+                <div class="content">
+                    <div class="name">Hiking Trails</div>
+                    <div class="des">Explore lush forest paths.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation-buttons">
+            <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
+            <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+    </div>
+
+    <div class="back-button">
+        <button><a href="gallery.html">Back to Gallery</a></button>
+    </div>
+
+    <script>
+        let next = document.querySelector('.next')
+        let prev = document.querySelector('.prev')
+
+        next.addEventListener('click', function () {
+            let items = document.querySelectorAll('.item')
+            document.querySelector('.slide').appendChild(items[0])
+        })
+
+        prev.addEventListener('click', function () {
+            let items = document.querySelectorAll('.item')
+            document.querySelector('.slide').prepend(items[items.length - 1]) // here the length of items = 6
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,135 @@
+.navbar {
+    background-color: #ffffff;
+    padding: 0.5rem 1rem;
+}
+
+.navbar .navbar-brand .logo {
+    width: 140px;
+}
+
+.navbar .nav-link {
+    font-size: 18px;
+    color: #000000;
+    font-weight: bold;
+    transition: color 0.3s;
+    margin-left: 30px;
+}
+
+.navbar .nav-link:hover {
+    color: #0d6efd;
+}
+
+.navbar .nav-link.active {
+    color: #0d6efd !important;
+}
+
+.navbar .navbar-toggler-icon {
+    filter: invert(100%);
+}
+
+.navbar .bi-person-circle {
+    color: #000000;
+    font-size: 1.8rem;
+}
+
+#loginIcon i {
+    color: #000000;
+    transition: color 0.3s ease;
+}
+
+#loginIcon:hover i {
+    color: #0d6efd;
+}
+
+.topBackground {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/faqBackground2.jpeg);
+    background-size: cover;
+    height: 550px;
+    position: relative;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.topBackground h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.faqsbox .container {
+    border: 1px solid #e7e4e4;
+    padding: 30px;
+    border-radius: 10px;
+    margin: 20px auto;
+    text-align: left;
+    background-color: #ffffff;
+    max-width: 1000px;
+}
+
+.section-title {
+    font-size: 24px;
+    color: #333333;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e7e4e4;
+    padding-bottom: 10px;
+}
+
+summary {
+    font-size: 18px;
+    color: #555555;
+    cursor: pointer;
+    margin-top: 15px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+    border: 1px solid #e7e4e4;
+    transition: background-color 0.3s;
+}
+
+summary:hover {
+    background-color: #e9ecef;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+details p {
+    margin: 15px 0;
+    padding: 0 10px;
+    color: #555555;
+}
+
+.help a img {
+    width: 200px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.help a img:hover {
+    transform: scale(1.05);
+}
+
+.copyrightContainer {
+    background-color: #d3e9f5;
+    padding: 20px 0;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.copyrightContainer .copyrightLogo {
+    max-width: 35%;
+    height: auto;
+}
+
+.copyrightContainer .copyrightText {
+    font-size: 14px;
+    margin-top: 10px;
+}

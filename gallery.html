@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Gallery</title>
+    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="Home.html">
+                <img class="logo" src="images/logo.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li>
+                        <a class="nav-link" href="Home.html">Home</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="about.html">About Malaysia</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li>
+                        <a class="nav-link active" aria-current="page" href="gallery.html">Gallery</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="TravelTips.html">Travel Tips</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="adventures.html">Adventure Activities</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="faq.html">FAQs</a>
+                    </li>
+                </ul>
+                <a class="nav-link" href="#" id="loginIcon">
+                    <i class="bi bi-person-circle"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="text-center my-5">
+        <h1>Popular Tourist Spots in Malaysia</h1>
+        <div class="container mt-4">
+            <div class="row gallery">
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="Cameron.html">
+                        <img src="images/image12.jpg" alt="Tea Plantation" class="gallery-image">
+                        <div class="caption">Tea Plantation</div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="Twin.html">
+                        <img src="images/image13.jpg" alt="Petronas Twin Towers" class="gallery-image">
+                        <div class="caption">Petronas Twin Towers</div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="Desaru.html">
+                        <img src="images/image11.jpg" alt="Desaru Beach" class="gallery-image">
+                        <div class="caption">Desaru Beach</div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="Lego.html">
+                        <img src="images/image15.jpg" alt="LEGOLAND Malaysia" class="gallery-image">
+                        <div class="caption">LEGOLAND Malaysia</div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 gallery-item">
+                    <a href="Langkawi.html">
+                        <img src="images/image16.jpg" alt="Langkawi Sky Bridge" class="gallery-image">
+                        <div class="caption">Langkawi Sky Bridge</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="Photos" class="text-center my-5">
+        <div class="title">
+            <h1>Malaysia Photos</h1>
+            <p>Find your dream place</p>
+        </div>
+
+        <div class="container mt-4">
+            <div class="row gallery" id="gallery"></div>
+            <button class="btn btn-primary mt-4" id="btn">Show More</button>
+            <div class="row gallery mt-4" id="gallery1"></div>
+        </div>
+    </section>
+
+    <div class="social-media">
+        <a href="https://facebook.com"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+
+    <div class="copyrightContainer">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="images/logo.png" alt="Logo" class="copyrightLogo mb-3">
+                    <p class="copyrightText">© 2024 MYEXPLORE. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        const apiKey = '5mOdLZq5gu9Q8u1IpP5a8gZFFRL7RpxF7wnO22ynVbefRL6ZAyBZLALG';
+        let apiUrl = 'https://api.pexels.com/v1/search?query=Malaysia+tourist';
+
+        fetch(apiUrl, {
+            headers: {
+                'Authorization': apiKey
+            }
+        })
+            .then(response => response.json())
+            .then(data => {
+                const gallery = document.getElementById('gallery');
+                data.photos.forEach(photo => {
+                    const imgContainer = document.createElement('div');
+                    imgContainer.classList.add('col-md-4', 'col-sm-6', 'gallery-item');
+
+                    const imgElement = document.createElement('img');
+                    imgElement.src = photo.src.medium;
+                    imgElement.alt = `Photo by ${photo.photographer}`;
+                    imgElement.classList.add('gallery-image');
+
+                    const authorInfo = document.createElement('div');
+                    authorInfo.textContent = `Photo by ${photo.photographer}`;
+                    authorInfo.classList.add('caption');
+
+                    imgContainer.appendChild(imgElement);
+                    imgContainer.appendChild(authorInfo);
+                    gallery.appendChild(imgContainer);
+                });
+            })
+            .catch(error => console.error('Error fetching images:', error));
+
+        const btn = document.getElementById('btn');
+
+        btn.addEventListener('click', () => {
+            apiUrl = 'https://api.pexels.com/v1/search?query=Malaysia';
+
+            fetch(apiUrl, {
+                headers: {
+                    'Authorization': apiKey
+                }
+            })
+                .then(response => response.json())
+                .then(data => {
+                    const gallery = document.getElementById('gallery1');
+                    gallery.innerHTML = ''; // Clear previous images
+                    data.photos.forEach(photo => {
+                        const imgContainer = document.createElement('div');
+                        imgContainer.classList.add('col-md-4', 'col-sm-6', 'gallery-item');
+
+                        const imgElement = document.createElement('img');
+                        imgElement.src = photo.src.medium;
+                        imgElement.alt = `Photo by ${photo.photographer}`;
+                        imgElement.classList.add('gallery-image');
+
+                        const authorInfo = document.createElement('div');
+                        authorInfo.textContent = `Photo by ${photo.photographer}`;
+                        authorInfo.classList.add('caption');
+
+                        imgContainer.appendChild(imgElement);
+                        imgContainer.appendChild(authorInfo);
+                        gallery.appendChild(imgContainer);
+                    });
+                })
+                .catch(error => console.error('Error fetching images:', error));
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            galleryItems.forEach((item, index) => {
+                item.addEventListener('click', function () {
+                    localStorage.setItem('lastViewedImage', index);
+                });
+            });
+
+            // Load and highlight the last viewed image
+            const lastViewedIndex = localStorage.getItem('lastViewedImage');
+            if (lastViewedIndex !== null) {
+                galleryItems[lastViewedIndex].scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        });
+    </script>
+</body>
+
+</html>

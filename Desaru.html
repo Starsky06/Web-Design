@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Gallery</title>
+    <link rel="stylesheet" href="css/Cameron.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="slide">
+            <div class="item" style="background-image: url(images/image31\ \(1\).jpg);">
+                <div class="content">
+                    <div class="name">Scenic Beach</div>
+                    <div class="des">Beautiful sandy coastline and clear waters.</div>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(images/image31\ \(2\).jpg);">
+                <div class="content">
+                    <div class="name">Relaxing Spot</div>
+                    <div class="des">Perfect for unwinding by the sea.</div>
+                    <button><a href="https://en.wikipedia.org/wiki/Desaru">See More</a></button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(images/image31\ \(3\).jpg);">
+                <div class="content">
+                    <div class="name">Water Activities</div>
+                    <div class="des">Opportunities for swimming and snorkeling.</div>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(images/image31\ \(4\).jpg);">
+                <div class="content">
+                    <div class="name">Sunsets</div>
+                    <div class="des">Stunning views of the evening sky.</div>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(images/image31\ \(5\).jpg);">
+                <div class="content">
+                    <div class="name">Family-Friendly</div>
+                    <div class="des">Safe and enjoyable for all ages.</div>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(images/image31\ \(6\).jpg);">
+                <div class="content">
+                    <div class="name">Nearby Resorts</div>
+                    <div class="des">Comfortable accommodations close by.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation-buttons">
+            <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
+            <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+    </div>
+
+    <div class="back-button">
+        <button><a href="gallery.html">Back to Gallery</a></button>
+    </div>
+
+    <script>
+        let next = document.querySelector('.next');
+        let prev = document.querySelector('.prev');
+
+        next.addEventListener('click', function () {
+            let items = document.querySelectorAll('.item');
+            document.querySelector('.slide').appendChild(items[0]);
+        });
+
+        prev.addEventListener('click', function () {
+            let items = document.querySelectorAll('.item');
+            document.querySelector('.slide').prepend(items[items.length - 1]); // here the length of items = 6
+        });
+    </script>
+
+</body>
+
+</html>

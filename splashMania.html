@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Splash Mania Waterpark</title>
+    <link rel="stylesheet" type="text/css" href="css/splashMania.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const images = document.querySelectorAll(".activityImage");
+            const modalImage = document.getElementById("modalImage");
+            const imageModal = new bootstrap.Modal(document.getElementById('imageModal'));
+
+            images.forEach(image => {
+                image.addEventListener("click", function () {
+                    modalImage.src = this.src;
+                    imageModal.show();
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="Home.html">
+                <img class="logo" src="images/logo.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li>
+                        <a class="nav-link" href="Home.html">Home</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="about.html">About Malaysia</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li>
+                        <a class="nav-link active" aria-current="page" href="TravelTips.html">Travel Tips</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="adventures.html">Adventure Activities</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="faq.html">FAQs</a>
+                    </li>
+                </ul>
+                <a class="nav-link" href="#" id="loginIcon">
+                    <i class="bi bi-person-circle"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="mainTitle text-center">Welcome to Splash Mania Waterpark</h1>
+
+        <div class="row">
+            <div class="col-md-12">
+                <p class="introText">SplashMania Waterpark is a premier water park located in Gamuda Cove, Malaysia. It
+                    offers a variety of thrilling water attractions, catering to both adrenaline-seekers and families.
+                    The park boasts over 70 water slides and attractions, including wave pools, lazy rivers, and
+                    high-speed rides. The waterpark is designed to provide a fun and adventurous experience with
+                    state-of-the-art facilities, making it an ideal destination for a day of excitement and relaxation.
+                    SplashMania also emphasizes safety and comfort, ensuring a memorable visit for all ages.</p>
+                <p class="introText"><strong>Tip:</strong> To avoid crowds, plan your trip on weekdays, especially in
+                    the mornings.</p>
+            </div>
+        </div>
+
+        <div class="row my-4">
+            <div class="col-md-12 text-center">
+                <img src="images/splashManiaMain.jpeg" class="mainImage img-fluid" alt="Splash Mania Waterpark">
+            </div>
+        </div>
+
+        <h2 class="sectionTitle">What to Bring</h2>
+        <ul class="activityList">
+            <li><strong>Waterproof Phone Case:</strong> If you plan to take photos, a waterproof case will protect your
+                phone.</li>
+            <li><strong>Cashless Payment:</strong> Bring a card or mobile payment method, as many parks operate cashless
+                systems for convenience.</li>
+        </ul>
+
+        <h2 class="sectionTitle">Safety</h2>
+        <ul class="activityList">
+            <li><strong>Follow Park Rules:</strong> Observe the safety instructions for each ride to ensure a safe
+                experience.</li>
+            <li><strong>Supervise Children:</strong> Keep an eye on younger kids, especially in wave pools or fast-paced
+                areas.</li>
+            <li><strong>Lifeguards:</strong> Take note of where the lifeguards are stationed in case of emergencies.
+            </li>
+        </ul>
+
+        <h2 class="sectionTitle mt-5">Gallery</h2>
+        <div class="row my-5">
+            <div class="col-md-4">
+                <img src="images/splashMania1.jpeg" class="activityImage img-fluid" alt="Splash Mania Image 1">
+            </div>
+            <div class="col-md-4">
+                <img src="images/splashMania2.jpeg" class="activityImage img-fluid" alt="Splash Mania Image 2">
+            </div>
+            <div class="col-md-4">
+                <img src="images/splashMania3.jpeg" class="activityImage img-fluid" alt="Splash Mania Image 3">
+            </div>
+            <div class="col-md-4">
+                <img src="images/splashMania4.jpeg" class="activityImage img-fluid" alt="Splash Mania Image 4">
+            </div>
+            <div class="col-md-4">
+                <img src="images/splashMania5.jpeg" class="activityImage img-fluid" alt="Splash Mania Image 5">
+            </div>
+            <div class="col-md-4">
+                <img src="images/splashMania6.jpeg" class="activityImage img-fluid" alt="Splash Mania Image 6">
+            </div>
+        </div>
+
+        <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content bg-transparent border-0">
+                    <div class="modal-body p-0">
+                        <img id="modalImage" src="" alt="Selected Image" class="img-fluid rounded" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="sectionTitle mt-5">Protect the Environment</h2>
+        <p class="warningText">Be mindful of the park's fragile ecosystem. Avoid leaving any waste behind and follow all
+            park guidelines!</p>
+        <p class="warningText">Do not disturb the animals or their habitats. Keep a safe distance when observing
+            wildlife!</p>
+    </div>
+
+    <div class="copyrightContainer">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="images/logo.png" alt="Logo" class="copyrightLogo mb-3">
+                    <p class="copyrightText">© 2024 MYEXPLORE. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

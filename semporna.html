@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semporna</title>
+    <link rel="stylesheet" type="text/css" href="css/semporna.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const images = document.querySelectorAll(".activityImage");
+            const modalImage = document.getElementById("modalImage");
+            const imageModal = new bootstrap.Modal(document.getElementById('imageModal'));
+
+            images.forEach(image => {
+                image.addEventListener("click", function () {
+                    modalImage.src = this.src;
+                    imageModal.show();
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="Home.html">
+                <img class="logo" src="images/logo.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li>
+                        <a class="nav-link" href="Home.html">Home</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="about.html">About Malaysia</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li>
+                        <a class="nav-link active" aria-current="page" href="TravelTips.html">Travel Tips</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="adventures.html">Adventure Activities</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="faq.html">FAQs</a>
+                    </li>
+                </ul>
+                <a class="nav-link" href="#" id="loginIcon">
+                    <i class="bi bi-person-circle"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="mainTitle text-center">Welcome to Semporna</h1>
+
+        <div class="row my-4">
+            <div class="col-md-12 text-center">
+                <img src="images/semporna.jpg" class="mainImage img-fluid" alt="Semporna">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <p class="introText"><strong>Semporna</strong> is a coastal town located in the eastern part of Sabah,
+                    Malaysia, on the island of Borneo. Known as the gateway to the world-famous Sipadan Island, Semporna
+                    is a popular destination for divers and snorkelers seeking to explore some of the most vibrant coral
+                    reefs and marine life in the world. The town itself is a bustling hub with a rich cultural mix of
+                    Bajau, Suluk, and other indigenous communities, who are known for their seafaring traditions. With
+                    its crystal-clear waters, stunning marine biodiversity, and picturesque islands, Semporna offers a
+                    perfect blend of adventure and relaxation for travelers.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <p class="introText">The best time to visit Semporna is during the dry season, from <strong>March to
+                        October</strong>. This period offers the best visibility for diving and snorkeling, with calm
+                    seas and pleasant weather.</p>
+                <p class="introText"><strong>April to June</strong> is peak season for divers, especially for those
+                    heading to Sipadan Island, so plan ahead and book your accommodation and permits early.</p>
+            </div>
+        </div>
+
+        <h2 class="sectionTitle">Transport Recommendations</h2>
+        <ul class="transportList">
+            <li><strong>By Air:</strong> The nearest airport to Semporna is Tawau Airport (TWU), located about 1.5 hours
+                away by car. You can fly into Tawau from major cities like Kuala Lumpur or Kota Kinabalu. From the
+                airport, you can take a taxi or arrange a shuttle to Semporna.</li>
+            <li><strong>By Bus:</strong> If you’re already in Sabah, you can take a bus from Kota Kinabalu or Sandakan
+                to Semporna. The journey is long, taking around 8-10 hours from Kota Kinabalu.</li>
+        </ul>
+
+        <h2 class="sectionTitle">Activities You Must Do</h2>
+        <ul class="activityList">
+            <li><strong>Diving:</strong> Semporna is a gateway to some of the world’s best dive sites, including Sipadan
+                Island, Mabul Island, and Kapalai. If you’re diving in Sipadan, make sure to secure a permit in advance,
+                as only 120 permits are issued per day.</li>
+            <div class="row my-4">
+                <div class="col-md-6">
+                    <img src="images/diving.jpg" class="activityImage img-fluid" alt="Diving">
+                </div>
+                <div class="col-md-6">
+                    <img src="images/snorkeling.jpg" class="activityImage img-fluid" alt="Snorkeling">
+                </div>
+            </div>
+            <li><strong>Snorkeling:</strong> If you’re not a diver, snorkeling is a great way to experience the vibrant
+                marine life. Many tour operators offer snorkeling trips to nearby islands.</li>
+            <div class="row my-4">
+                <div class="col-md-6">
+                    <img src="images/turtle.jpg" class="activityImage img-fluid" alt="Turtle">
+                </div>
+                <div class="col-md-6">
+                    <img src="images/semporna1.jpg" class="activityImage img-fluid" alt="Semporna Island">
+                </div>
+            </div>
+            <li><strong>Island Hopping:</strong> Explore the stunning islands around Semporna, such as Bohey Dulang,
+                Mataking, and Pom Pom. Each island offers unique landscapes, from volcanic craters to white sandy
+                beaches.</li>
+        </ul>
+
+        <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content bg-transparent border-0">
+                    <div class="modal-body p-0">
+                        <img id="modalImage" src="" alt="Selected Image" class="img-fluid rounded" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="sectionTitle">Important Notices</h2>
+        <p class="warningText">If you plan to dive, ensure you have a recognized diving certification. If you’re a
+            beginner, consider taking a dive course at one of the local dive centers.</p>
+    </div>
+
+    <div class="copyrightContainer">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="images/logo.png" alt="Logo" class="copyrightLogo mb-3">
+                    <p class="copyrightText">© 2024 MYEXPLORE. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

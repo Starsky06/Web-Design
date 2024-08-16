@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyWorlds Theme Park</title>
+    <link rel="stylesheet" type="text/css" href="css/skyworld.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const images = document.querySelectorAll(".activityImage");
+            const modalImage = document.getElementById("modalImage");
+            const imageModal = new bootstrap.Modal(document.getElementById('imageModal'));
+
+            images.forEach(image => {
+                image.addEventListener("click", function () {
+                    modalImage.src = this.src;
+                    imageModal.show();
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="Home.html">
+                <img class="logo" src="images/logo.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li>
+                        <a class="nav-link" href="Home.html">Home</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="about.html">About Malaysia</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li>
+                        <a class="nav-link active" aria-current="page" href="TravelTips.html">Travel Tips</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="adventures.html">Adventure Activities</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="faq.html">FAQs</a>
+                    </li>
+                </ul>
+                <a class="nav-link" href="#" id="loginIcon">
+                    <i class="bi bi-person-circle"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="mainTitle text-center">Welcome to SkyWorlds Theme Park</h1>
+
+        <div class="row my-4">
+            <div class="col-md-12 text-center">
+                <img src="images/skyworld1.jpeg" class="mainImage img-fluid" alt="SkyWorlds Theme Park">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <p class="introText"><strong>SkyWorlds Theme Park</strong>, located in Genting Highlands, Malaysia, is a
+                    world-class outdoor amusement park offering a mix of exciting rides and immersive attractions. The
+                    park features themed zones inspired by popular movie franchises, providing visitors with a thrilling
+                    blend of adventure, entertainment, and family-friendly fun. With a variety of rides, from high-speed
+                    roller coasters to interactive 4D experiences, SkyWorlds caters to visitors of all ages. Set in the
+                    cool, scenic highlands, the park offers breathtaking views and a memorable experience, making it a
+                    must-visit destination for thrill-seekers and families alike.</p>
+                <p class="introText"><strong>Tip:</strong> The park is less crowded on weekdays, which means shorter
+                    wait
+                    times for rides. Get to the park when it opens to take advantage of quieter times and avoid long
+                    lines for popular attractions.</p>
+            </div>
+        </div>
+
+        <h2 class="sectionTitle">What to Bring</h2>
+        <ul class="transportList">
+            <li><strong>Backpack:</strong> A small backpack is useful for carrying essentials like water, snacks, and
+                extra clothing.</li>
+            <li><strong>Portable Charger:</strong> You’ll likely use your phone for photos or checking the park map, so
+                having a portable charger ensures you stay connected.</li>
+            <li><strong>Cashless Payment:</strong> The park may use a cashless system, so bring a card or use mobile
+                payment for food and merchandise.</li>
+        </ul>
+
+        <h2 class="sectionTitle">Dining Options</h2>
+        <p class="introText">SkyWorlds has a variety of food stalls and restaurants. Try themed dining experiences to
+            enhance your visit.</p>
+
+        <h2 class="sectionTitle">Other Attractions</h2>
+        <p class="introText">Explore Genting Highlands: Make time to explore other attractions in the area, such as the
+            casino, shopping outlets, or indoor theme parks.</p>
+
+        <div class="row my-5">
+            <div class="col-md-4 text-center">
+                <img src="images/skyworldMain.jpeg" class="activityImage img-fluid" alt="SkyWorlds Image 1">
+            </div>
+            <div class="col-md-4 text-center">
+                <img src="images/skyworld2.jpeg" class="activityImage img-fluid" alt="SkyWorlds Image 2">
+            </div>
+            <div class="col-md-4 text-center">
+                <img src="images/skyworld3.jpeg" class="activityImage img-fluid" alt="SkyWorlds Image 3">
+            </div>
+            <div class="col-md-4 text-center">
+                <img src="images/skyworld4.jpeg" class="activityImage img-fluid" alt="SkyWorlds Image 4">
+            </div>
+            <div class="col-md-4 text-center">
+                <img src="images/skyworld5.jpeg" class="activityImage img-fluid" alt="SkyWorlds Image 5">
+            </div>
+            <div class="col-md-4 text-center">
+                <img src="images/skyworld6.jpeg" class="activityImage img-fluid" alt="SkyWorlds Image 6">
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-body p-0">
+                    <img id="modalImage" src="" alt="Selected Image" class="img-fluid rounded" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyrightContainer">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="images/logo.png" alt="Logo" class="copyrightLogo mb-3">
+                    <p class="copyrightText">© 2024 MYEXPLORE. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

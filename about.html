@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Malaysia</title>
+    <link rel="stylesheet" href="css/about.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const images = [
+                "images/Penang1.jpeg",
+                "images/Penang2.jpeg",
+                "images/Penang3.jpeg"
+            ];
+
+            let currentIndex = 0;
+            const imageElement = document.getElementById("aboutMalaysiaImage");
+
+            function changeImage() {
+                currentIndex = (currentIndex + 1) % images.length;
+                imageElement.style.opacity = 0;
+                setTimeout(() => {
+                    imageElement.src = images[currentIndex];
+                    imageElement.style.opacity = 1;
+                }, 500);
+            }
+
+            setInterval(changeImage, 5000);
+        });
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="Home.html">
+                <img class="logo" src="images/logo.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li>
+                        <a class="nav-link" href="Home.html">Home</a>
+                    </li>
+                    <li>
+                        <a class="nav-link active" aria-current="page" href="about.html">About Malaysia</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="TravelTips.html">Travel Tips</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="adventures.html">Adventure Activities</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="faq.html">FAQs</a>
+                    </li>
+                </ul>
+                <a class="nav-link" href="#" id="loginIcon">
+                    <i class="bi bi-person-circle"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        document.getElementById('loginIcon').addEventListener('click', function (event) {
+            event.preventDefault();
+            var myModal = new bootstrap.Modal(document.getElementById('loginModal'), {
+                keyboard: false
+            });
+            myModal.show();
+        });
+    </script>
+
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="aboutMalaysiaContainer text-center">
+        <div class="container">
+            <h2 class="aboutTitle mb-4">About Malaysia</h2>
+
+            <div class="aboutImageContainer mb-4">
+                <img id="aboutMalaysiaImage" src="images/Penang1.jpeg" class="d-block w-100 aboutImage"
+                    alt="Malaysia Image">
+            </div>
+
+            <p class="aboutDescription">
+                Malaysia is a country in Southeast Asia, known for its cultural diversity, stunning landscapes, and
+                modern cities.
+                It is a place where you can experience the vibrancy of a multicultural society, enjoy beautiful beaches
+                and rainforests,
+                and explore bustling urban centers like Kuala Lumpur. Malaysia offers a unique blend of tradition and
+                modernity, making it
+                a captivating destination for visitors from around the world.
+            </p>
+        </div>
+    </div>
+
+    <div class="videoContainer text-center">
+        <div class="container">
+            <h2 class="videoTitle mb-4">Let's see this video to know about Malaysia</h2>
+
+            <div class="videoBox mb-4">
+                <iframe id="aboutMalaysiaVideo" width="560" height="315" src="https://www.youtube.com/embed/EVG-IH8cMYs"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyrightContainer">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="images/logo.png" alt="Logo" class="copyrightLogo mb-3">
+                    <p class="copyrightText">© 2024 MYEXPLORE. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    
+
+
+</body>
+
+</html>

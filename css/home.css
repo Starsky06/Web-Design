@@ -1,0 +1,764 @@
+.navbar {
+    background-color: #ffffff;
+    padding: 0.5rem 1rem;
+}
+
+.navbar .navbar-brand .logo {
+    width: 140px;
+}
+
+.navbar .nav-link {
+    font-size: 18px;
+    color: #000000;
+    font-weight: bold;
+    transition: color 0.3s;
+    margin-left: 30px;
+}
+
+.navbar .nav-link:hover {
+    color: #0d6efd;
+}
+
+.navbar .nav-link.active {
+    color: #0d6efd !important;
+}
+
+.navbar .navbar-toggler-icon {
+    filter: invert(100%);
+}
+
+.navbar .bi-person-circle {
+    color: #000000;
+    font-size: 1.8rem;
+}
+
+#loginIcon i {
+    color: #000000;
+    transition: color 0.3s ease;
+}
+
+#loginIcon:hover i {
+    color: #0d6efd;
+}
+
+.topBackground {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/homeBackground.gif);
+    background-size: cover;
+    background-position: center;
+    height: 550px;
+    position: relative;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.topBackground .textContainer {
+    text-align: center;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.topBackground h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.topBackground .topDescription {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: #f0f0f0;
+    line-height: 1.4;
+}
+
+.searchContainer {
+    background-color: #f8f9fa;
+    padding: 15px 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: -35px;
+    position: relative;
+    z-index: 1;
+    width: 90%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+}
+
+.searchContainer .container {
+    display: flex;
+    justify-content: center;
+}
+
+.searchContainer form {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.searchContainer .searchLabel {
+    font-weight: bold;
+    margin-bottom: 0;
+    margin-right: 5px;
+    white-space: nowrap;
+}
+
+.searchContainer .searchLine {
+    flex-grow: 1;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    border-radius: 0;
+    background-color: transparent;
+    transition: border-color 0.3s;
+}
+
+.searchContainer .searchLine:focus {
+    box-shadow: none;
+}
+
+.searchContainer .btn.searchButton {
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.recommendationContainer {
+    padding: 20px 0;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.recommendationContainer h2 {
+    font-weight: bold;
+    color: #333;
+}
+
+.recommendationContainer .btn-group {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.recommendationContainer .recomendationChoice {
+    flex: 1 1 auto;
+    text-align: center;
+    font-size: 16px !important;
+    border-radius: 20px !important;
+    padding: 10px 20px;
+    min-width: 150px;
+    max-width: 160px;
+}
+
+.recommendationContainer .recomendationImageContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 10px 0;
+}
+
+.recommendationContainer .recommendationImage {
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 4/3;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.recommendationContainer .recommendationImage:hover {
+    transform: scale(1.05);
+}
+
+.modal-content {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.modal-body {
+    padding: 0;
+}
+
+#modalImage {
+    width: 100%;
+    height: auto;
+}
+
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.recommendationContainer .btnShow {
+    margin-top: 20px;
+    padding: 10px 35px;
+    font-size: 17px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.penangContainer {
+    min-height: 400px;
+    background-color: #ffffff;
+    background-image: linear-gradient(rgb(255 255 255 / 60%), rgb(255 255 255 / 70%)), url(../images/PenangBackground.jpeg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 60px 0px;
+}
+
+.penangContainer .penangTitle {
+    font-weight: bold;
+    color: #333;
+    font-size: 2.5rem;
+}
+
+.penangContainer .penangDescription {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #555;
+    text-align: justify;
+}
+
+.penangContainer .col-md-9 {
+    display: flex;
+    align-items: center;
+}
+
+.penangContainer .carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.penangContainer .penangImage {
+    border-radius: 10px;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.penangContainer .carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #000;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.terengganuContainer {
+    min-height: 400px;
+    background-color: #ffffff;
+    background-image: linear-gradient(rgb(255 255 255 / 60%), rgb(255 255 255 / 70%)), url(../images/TerengganuBackground.jpeg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 60px 0px;
+}
+
+.terengganuContainer .terengganuTitle {
+    font-weight: bold;
+    color: #333;
+    font-size: 2.5rem;
+}
+
+.terengganuContainer .terengganuDescription {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: #555;
+    text-align: justify;
+}
+
+.terengganuContainer .col-md-9 {
+    display: flex;
+    align-items: center;
+}
+
+.terengganuContainer .carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.terengganuContainer .terengganuImage {
+    border-radius: 10px;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.terengganuContainer .carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #000;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.serviceContainer {
+    padding: 60px 0;
+    background-color: #ffffff;
+}
+
+.serviceContainer h2 {
+    font-weight: bold;
+    color: #333;
+    font-size: 2.5rem;
+}
+
+.serviceContainer .serviceIntro {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 50px;
+    line-height: 1.6;
+}
+
+.serviceContainer .serviceBox {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.serviceContainer .serviceBox:hover {
+    transform: scale(1.05);
+}
+
+.serviceContainer .serviceCircle {
+    background-color: #0d6efd;
+    color: #ffffff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.serviceContainer .serviceImage {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.serviceContainer .serviceTitle {
+    font-weight: bold;
+    color: #333;
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+.serviceLink {
+    text-decoration: none;
+    color: inherit;
+}
+
+.serviceLink .serviceBox {
+    cursor: pointer;
+}
+
+.serviceLink .serviceBox:hover {
+    transform: scale(1.05);
+}
+
+.copyrightContainer {
+    background-color: #d3e9f5;
+    padding: 20px 0;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.copyrightContainer .copyrightLogo {
+    max-width: 35%;
+    height: auto;
+}
+
+.copyrightContainer .copyrightText {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 0.3rem 0.5rem;
+    }
+
+    .navbar .navbar-brand .logo {
+        width: 90px;
+    }
+
+    .navbar .nav-link {
+        font-size: 13px;
+    }
+
+    .navbar .bi-person-circle {
+        font-size: 1.5rem;
+    }
+
+    .topBackground {
+        height: 450px;
+    }
+
+    .topBackground h1 {
+        font-size: 2.5rem;
+    }
+
+    .recommendationContainer .recomendationImageContainer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 10px 0;
+    }
+
+    .recommendationContainer .recommendationImage {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+    }
+
+    .recommendationContainer .show-all-btn {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        display: inline-block;
+    }
+
+    .penangContainer {
+        flex-direction: column;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .penangContainer .penangTitle {
+        font-size: 1.8rem;
+    }
+
+    .penangContainer .penangDescription {
+        font-size: 1rem;
+        margin-top: 15px;
+        margin-bottom: 20px;
+        text-align: justify;
+        padding: 0 20px;
+    }
+
+    .penangContainer .carousel-inner {
+        display: flex;
+        align-items: center;
+    }
+
+    .penangContainer .penangImage {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .terengganuContainer {
+        flex-direction: column;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .terengganuContainer .terengganuTitle {
+        font-size: 1.8rem;
+    }
+
+    .terengganuContainer .terengganuDescription {
+        font-size: 1rem;
+        margin-top: 15px;
+        margin-bottom: 20px;
+        text-align: justify;
+        padding: 0 20px;
+    }
+
+    .terengganuContainer .carousel-inner {
+        display: flex;
+        align-items: center;
+    }
+
+    .terengganuContainer .terengganuImage {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .serviceContainer .serviceBox {
+        max-width: 300px;
+        height: 300px;
+    }
+
+    .serviceContainer .serviceImage {
+        height: 140px;
+    }
+}
+
+@media (max-width: 768px) {
+    .topBackground {
+        height: 350px;
+    }
+
+    .topBackground h1 {
+        font-size: 2rem;
+    }
+
+    .searchContainer form {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .searchContainer .col-md-3 {
+        flex: 1 1 0;
+        margin-bottom: 0;
+    }
+
+    .searchContainer .searchLabel {
+        flex: 0 0 auto;
+        margin-right: 5px;
+        font-size: 14px;
+    }
+
+    .searchContainer .searchLine {
+        font-size: 14px;
+        max-width: 100%;
+        padding: 5px 8px;
+    }
+
+    .searchContainer .btn.searchButton {
+        flex: 0 0 auto;
+        width: 40px;
+        height: 40px;
+    }
+
+    .recommendationContainer .recomendationImageContainer {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 10px 0;
+    }
+
+    .recommendationContainer .recommendationImage {
+        width: 100%;
+        height: 180px;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+    }
+
+    .penangContainer {
+        flex-direction: column;
+        padding: 40px 15px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .penangContainer .penangTitle {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+
+    .penangContainer .penangDescription {
+        font-size: 1rem;
+        margin-bottom: 20px;
+        text-align: center;
+        line-height: 1.5;
+        padding: 0 10px;
+    }
+
+    .penangContainer .col-md-3,
+    .penangContainer .col-md-9 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .penangContainer .carousel-inner {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .penangContainer .penangImage {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        margin-bottom: 10px;
+    }
+
+    .penangContainer .btnExplore {
+        padding: 10px 20px;
+        font-size: 14px;
+        border-radius: 5px;
+        margin-top: 15px;
+    }
+
+    .terengganuContainer .terengganuTitle {
+        font-size: 1.8rem;
+    }
+
+    .terengganuContainer .terengganuDescription {
+        font-size: 1rem;
+        margin-top: 15px;
+        margin-bottom: 20px;
+        text-align: justify;
+        padding: 0 15px;
+    }
+
+    .terengganuContainer .carousel-inner {
+        display: flex;
+        align-items: center;
+    }
+
+    .terengganuContainer .terengganuImage {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .serviceContainer .serviceBox {
+        max-width: 90%;
+        height: auto;
+    }
+
+    .serviceContainer .serviceImage {
+        height: 150px;
+    }
+
+    .serviceContainer h2 {
+        font-size: 1.8rem;
+    }
+
+    .serviceContainer .serviceIntro {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    .serviceContainer .serviceTitle {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar .nav-link {
+        font-size: 16px;
+    }
+
+    .topBackground h1 {
+        font-size: 1.5rem;
+    }
+
+    .searchContainer {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .searchContainer .col-md-3,
+    .searchContainer .col-auto {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .searchContainer label {
+        font-size: 14px;
+    }
+
+    .searchContainer input[type="text"],
+    .searchContainer input[type="date"],
+    .searchContainer input[type="number"] {
+        font-size: 14px;
+        padding: 5px;
+    }
+
+    .searchContainer .btn {
+        width: 100%;
+        padding: 8px;
+        margin-top: 10px;
+    }
+
+    .recommendationContainer h2,
+    .serviceContainer h2 {
+        font-size: 1.5rem;
+    }
+
+    .recommendationContainer .recomendationChoice {
+        font-size: 16px;
+    }
+
+    .recommendationContainer .recommendationImage {
+        height: 200px !important;
+    }
+
+    .penangContainer .penangTitle {
+        font-size: 1.2rem;
+    }
+
+    .penangContainer .penangDescription {
+        font-size: 0.8rem;
+        margin-top: 10px;
+        margin-bottom: 15px;
+        text-align: justify;
+        padding: 0 10px;
+    }
+
+    .terengganuContainer .terengganuTitle {
+        font-size: 1.2rem;
+    }
+
+    .terengganuContainer .terengganuDescription {
+        font-size: 0.8rem;
+        margin-top: 10px;
+        margin-bottom: 15px;
+        text-align: justify;
+        padding: 0 10px;
+    }
+
+    .serviceContainer .serviceBox {
+        max-width: 80%;
+        height: auto;
+        margin-bottom: 60px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .serviceContainer .serviceImage {
+        height: 150px;
+    }
+
+    .serviceContainer h2 {
+        font-size: 1.5rem;
+    }
+
+    .serviceContainer .serviceCircle {
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+    }
+
+    .serviceContainer .serviceTitle {
+        font-size: 16px;
+    }
+
+    .copyrightContainer .copyrightLogo {
+        max-width: 50%;
+    }
+}

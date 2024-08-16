@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gua Niah</title>
+    <link rel="stylesheet" type="text/css" href="css/gua.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const images = document.querySelectorAll(".smallImage");
+            const modalImage = document.getElementById("modalImage");
+            const imageModal = new bootstrap.Modal(document.getElementById('imageModal'));
+
+            images.forEach(image => {
+                image.addEventListener("click", function () {
+                    modalImage.src = this.src;
+                    imageModal.show();
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="Home.html">
+                <img class="logo" src="images/logo.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li>
+                        <a class="nav-link" href="Home.html">Home</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="about.html">About Malaysia</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li>
+                        <a class="nav-link active" aria-current="page" href="TravelTips.html">Travel Tips</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="adventures.html">Adventure Activities</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="faq.html">FAQs</a>
+                    </li>
+                </ul>
+                <a class="nav-link" href="#" id="loginIcon">
+                    <i class="bi bi-person-circle"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="mainTitle text-center">Welcome to Gua Niah</h1>
+
+        <div class="row my-4">
+            <div class="col-md-12 text-center">
+                <img src="images/gua.jpg" class="mainImage img-fluid" alt="Gua Niah">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <p class="introText"><strong>Gua Niah</strong>, or Niah Cave, is a famous archaeological and natural
+                    site located in Niah National Park in Sarawak, Malaysia. Known for its immense historical
+                    significance, Gua Niah is home to some of the oldest human remains in Southeast Asia, dating back
+                    over 40,000 years. The cave system features massive caverns, ancient rock paintings, and artifacts
+                    that offer a glimpse into prehistoric life. In addition to its archaeological importance, Gua Niah
+                    is also known for its impressive limestone formations and the diverse wildlife that inhabits the
+                    surrounding rainforest, making it a popular destination for both history enthusiasts and nature
+                    lovers.</p>
+                <p class="introText">The best time to visit Gua Niah is during the dry season, from <strong>March to
+                        September</strong>, when the weather is more conducive for trekking and cave exploration. The
+                    trails can be slippery during the rainy season. Arrive early in the day to avoid the heat and to
+                    have more time to explore the caves and surrounding areas.</p>
+            </div>
+        </div>
+
+        <h2 class="sectionTitle">Activities Recommended</h2>
+        <ul class="activityList">
+            <li><strong>Cave Exploration:</strong> Gua Niah is part of a larger cave system, including the Great Cave
+                and the Painted Cave. Expect a mix of history and nature as you explore these ancient sites, with
+                highlights including prehistoric rock paintings and the famous burial sites.</li>
+            <li><strong>Trekking:</strong> The trek to the caves involves a 3.5 km walk through the rainforest, which
+                takes about an hour. The trail is well-marked but can be challenging, especially in humid conditions.
+            </li>
+            <li><strong>Wildlife:</strong> Keep an eye out for the diverse wildlife in the area, including birds,
+                insects, and occasionally monkeys. The caves are also home to bats and swiftlets.</li>
+        </ul>
+
+        <div class="row my-4">
+            <div class="col-md-6 text-center">
+                <img src="images/gua1.jpg" class="smallImage img-fluid" alt="Gua Niah Interior">
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="images/gua2.jpg" class="smallImage img-fluid" alt="Niah Caves Exploration">
+            </div>
+        </div>
+
+        <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content bg-transparent border-0">
+                    <div class="modal-body p-0">
+                        <img id="modalImage" src="" alt="Selected Image" class="img-fluid rounded" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="sectionTitle">Tickets and Entrance Fees</h2>
+        <ul class="ticketList">
+            <li>There is an entrance fee for Niah National Park, which includes access to Gua Niah and other attractions
+                in the park. Tickets can be purchased at the park headquarters.</li>
+            <li>You’ll need to take a short boat ride across the Niah River to reach the trailhead for the caves. This
+                service is provided by the park for a small fee.</li>
+        </ul>
+
+        <h2 class="sectionTitle">Nearby Attractions</h2>
+        <p class="introText">After visiting Gua Niah, consider exploring Miri, known for its beaches, national parks,
+            and vibrant local markets.</p>
+
+        <div class="row my-4">
+            <div class="col-md-12 text-center">
+                <img src="images/miri.jpg" class="mainImage img-fluid" alt="Miri Sarawak">
+            </div>
+        </div>
+
+        <p class="introText">Located closer to Miri, this park offers additional trekking opportunities and waterfalls
+            for those interested in more outdoor adventures.</p>
+
+        <h2 class="sectionTitle">Important Notices</h2>
+        <ul class="noticeList">
+            <li>Gua Niah is a site of great historical and cultural significance, so treat it with respect. Do not touch
+                or damage the ancient rock paintings or artifacts.</li>
+            <li>Follow the marked trails and heed any safety warnings provided by park guides. Be cautious when
+                exploring the caves, as some areas have steep drops and slippery surfaces.</li>
+        </ul>
+    </div>
+
+    <div class="copyrightContainer">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="images/logo.png" alt="Logo" class="copyrightLogo mb-3">
+                    <p class="copyrightText">© 2024 MYEXPLORE. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

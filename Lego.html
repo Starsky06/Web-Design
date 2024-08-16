@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Gallery</title>
+    <link rel="stylesheet" href="css/Cameron.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="slide">
+            <div class="item"
+                style="background-image: url(https://onecms-res.cloudinary.com/image/upload/s--23kUxtVA--/c_crop,h_3756,w_5008,x_0,y_0/c_fill,g_auto,h_622,w_830/f_auto,q_auto/v1/mediacorp/cna/image/2023/11/29/legoland_malaysia_medini.jpg?itok=TBbgQWyy);">
+                <div class="content">
+                    <div class="name">Themed Park</div>
+                    <div class="des">Fun attractions and LEGO-based activities.</div>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(images/image33\ \(4\).jpg);">
+                <div class="content">
+                    <div class="name">Miniland</div>
+                    <div class="des">Miniature landmarks made of LEGO bricks.</div>
+                    <button><a href="https://en.wikipedia.org/wiki/Cameron_Highlands">See More</a></button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(images/image33\ \(3\).jpg);">
+                <div class="content">
+                    <div class="name">Water Park</div>
+                    <div class="des">Exciting slides and splash zones.</div>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(images/image33\ \(1\).jpg);">
+                <div class="content">
+                    <div class="name">Interactive Rides</div>
+                    <div class="des">Engaging LEGO-themed rides and games.</div>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(images/image33\ \(2\).jpg);">
+                <div class="content">
+                    <div class="name">LEGO Workshops</div>
+                    <div class="des">Build and create with LEGO bricks.</div>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(images/image35.jpg);">
+                <div class="content">
+                    <div class="name">Family Fun</div>
+                    <div class="des">Activities suitable for all ages.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation-buttons">
+            <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
+            <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+
+    </div>
+
+    <div class="back-button">
+        <button><a href="gallery.html">Back to Gallery</a></button>
+    </div>
+
+    <script>
+        let next = document.querySelector('.next');
+        let prev = document.querySelector('.prev');
+
+        next.addEventListener('click', function () {
+            let items = document.querySelectorAll('.item');
+            document.querySelector('.slide').appendChild(items[0]);
+        });
+
+        prev.addEventListener('click', function () {
+            let items = document.querySelectorAll('.item');
+            document.querySelector('.slide').prepend(items[items.length - 1]); // here the length of items = 6
+        });
+    </script>
+
+</body>
+
+</html>

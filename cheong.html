@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheong Fatt Tze Blue Mansion</title>
+    <link rel="stylesheet" type="text/css" href="css/cheong.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const images = document.querySelectorAll(".smallImage");
+            const modalImage = document.getElementById("modalImage");
+            const imageModal = new bootstrap.Modal(document.getElementById('imageModal'));
+
+            images.forEach(image => {
+                image.addEventListener("click", function () {
+                    modalImage.src = this.src;
+                    imageModal.show();
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="Home.html">
+                <img class="logo" src="images/logo.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li>
+                        <a class="nav-link" href="Home.html">Home</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="about.html">About Malaysia</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li>
+                        <a class="nav-link active" aria-current="page" href="TravelTips.html">Travel Tips</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="adventures.html">Adventure Activities</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="faq.html">FAQs</a>
+                    </li>
+                </ul>
+                <a class="nav-link" href="#" id="loginIcon">
+                    <i class="bi bi-person-circle"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="mainTitle text-center">Welcome to Cheong Fatt Tze Blue Mansion</h1>
+
+        <div class="row my-4">
+            <div class="col-md-12 text-center">
+                <img src="images/cheong.jpg" class="mainImage img-fluid" alt="Cheong Fatt Tze Blue Mansion">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <p class="introText"><strong>Cheong Fatt Tze Blue Mansion</strong>, located in George Town, Penang, is
+                    an iconic heritage building and a masterpiece of Sino-eclectic architecture. Built in the late 19th
+                    century by Cheong Fatt Tze, a prominent Chinese merchant and philanthropist, the mansion is renowned
+                    for its striking indigo-blue walls, intricate carvings, and antique furnishings. The mansion blends
+                    Eastern and Western architectural elements, symbolizing the fusion of cultures in Penang. Today, it
+                    serves as a boutique hotel and museum, offering visitors a glimpse into the opulent lifestyle of
+                    Penang's elite during the colonial era.</p>
+                <p class="introText">The mansion offers guided tours three times a day, typically at <strong>11:00 AM,
+                        2:00 PM, and 3:30 PM</strong>. These tours are the best way to fully appreciate the history,
+                    architecture, and cultural significance of the mansion. Arrive early to secure your spot, especially
+                    during peak tourist seasons.</p>
+            </div>
+        </div>
+
+        <h2 class="sectionTitle">Transport Recommendations</h2>
+        <ul class="transportList">
+            <li><strong>By Car or Taxi:</strong> The Blue Mansion is located in the heart of George Town, Penang, making
+                it easily accessible by car or taxi. It's about a 30-minute drive from Penang International Airport.
+            </li>
+            <li><strong>By Public Transport:</strong> You can take the Rapid Penang bus to the Chulia Street bus stop,
+                which is a short walk from the mansion.</li>
+        </ul>
+
+        <h2 class="sectionTitle">Cultural Sensitivity</h2>
+        <p class="culturalText">The Blue Mansion is a UNESCO World Heritage site and a cultural landmark, so be
+            respectful of the space. Refrain from touching artifacts or furniture, and follow all guidelines provided by
+            your tour guide.</p>
+
+        <div class="row my-4">
+            <div class="col-md-4 text-center">
+                <img src="images/cheong1.jpg" class="smallImage img-fluid" alt="Interior of Cheong Fatt Tze Mansion">
+            </div>
+            <div class="col-md-4 text-center">
+                <img src="images/cheong2.jpg" class="smallImage img-fluid"
+                    alt="Architecture of Cheong Fatt Tze Mansion">
+            </div>
+            <div class="col-md-4 text-center">
+                <img src="images/cheong3.jpg" class="smallImage img-fluid" alt="Courtyard of Cheong Fatt Tze Mansion">
+            </div>
+        </div>
+
+        <h2 class="sectionTitle">Dining Recommendations</h2>
+        <p class="diningText">The mansion houses a fine dining restaurant, Indigo, which offers a blend of Asian and
+            European cuisine. Reservations are recommended, especially for dinner.</p>
+
+        <div class="row my-4">
+            <div class="col-md-4 text-center">
+                <img src="images/dinning2.jpg" class="smallImage img-fluid" alt="Dining Experience at Indigo">
+            </div>
+            <div class="col-md-4 text-center">
+                <img src="images/dinning.jpg" class="smallImage img-fluid" alt="Cuisine at Indigo">
+            </div>
+            <div class="col-md-4 text-center">
+                <img src="images/dinning1.jpg" class="smallImage img-fluid" alt="Dining Ambiance at Indigo">
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-body p-0">
+                    <img id="modalImage" src="" alt="Selected Image" class="img-fluid rounded" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyrightContainer">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="images/logo.png" alt="Logo" class="copyrightLogo mb-3">
+                    <p class="copyrightText">© 2024 MYEXPLORE. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

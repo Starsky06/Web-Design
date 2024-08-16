@@ -1,0 +1,107 @@
+.navbar {
+    background-color: #ffffff;
+    padding: 0.5rem 1rem;
+}
+
+.navbar .navbar-brand .logo {
+    width: 140px;
+}
+
+.navbar .nav-link {
+    font-size: 18px;
+    color: #000000;
+    font-weight: bold;
+    transition: color 0.3s;
+    margin-left: 30px;
+}
+
+.navbar .nav-link:hover {
+    color: #0d6efd;
+}
+
+.navbar .nav-link.active {
+    color: #0d6efd !important;
+}
+
+.navbar .navbar-toggler-icon {
+    filter: invert(100%);
+}
+
+.navbar .bi-person-circle {
+    color: #000000;
+    font-size: 1.8rem;
+}
+
+#loginIcon i {
+    color: #000000;
+    transition: color 0.3s ease;
+}
+
+#loginIcon:hover i {
+    color: #0d6efd;
+}
+
+.askBox .container {
+    max-width: 700px;
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.form-label {
+    font-weight: bold;
+    color: #333;
+}
+
+.form-control,
+.form-select {
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.form-control:focus,
+.form-select:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 153, 0, 0.25);
+}
+
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 153, 0, 0.25);
+}
+
+.btn-secondary {
+    background-color: #ddd !important;
+    border-color: #ddd !important;
+}
+
+.btn-secondary:hover {
+    background-color: #ccc !important;
+    border-color: #ccc !important;
+}
+
+.copyrightContainer {
+    background-color: #d3e9f5;
+    padding: 20px 0;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.copyrightContainer .copyrightLogo {
+    max-width: 35%;
+    height: auto;
+}
+
+.copyrightContainer .copyrightText {
+    font-size: 14px;
+    margin-top: 10px;
+}
