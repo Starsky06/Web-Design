@@ -1,31 +1,58 @@
-Develop a basic user interface (UI) for a travel booking system using HTML, CSS, and JavaScript. This assignment focuses solely on front-end development—no backend functionality is required. 
+# MYEXPLORE — Malaysia Travel Website
 
+A responsive front-end travel website that introduces Malaysian destinations, travel services, and travel information.
 
+## Overview
 
-Requirements:  
+MYEXPLORE is a static travel-website concept developed with HTML, CSS, JavaScript, Bootstrap, and image assets. It presents destinations and tourism-related services in Malaysia through a multi-page interface.
 
-Design and implement a static, visually appealing UI for a travel booking website.  
+## Features
 
-Include essential front-end components such as:  
+- Responsive travel-website layout
+- Malaysia destination showcase pages
+- Image galleries and carousels
+- Travel-service information
+- Travel tips and safety-guide content
+- Multi-page navigation
+- Bootstrap-based UI components
 
-A homepage with search options (destination, dates, travelers).  
+## Site Structure
 
-Listings for flights, hotels or travel packages.  
+```mermaid
+flowchart TD
+    Home[Homepage] --> Destinations[Destination Pages]
+    Home --> Services[Travel Services]
+    Home --> Tips[Travel Tips]
+    Home --> Safety[Safety Guide]
+    Destinations --> Cameron[Cameron Highlands]
+    Destinations --> Desaru[Desaru]
+    Destinations --> Semporna[Semporna]
+    Destinations --> Kundasang[Kundasang]
+```
 
-A simple booking form.  
+## Example Pages
 
-Navigation menus and responsive layouts.  
+| File | Description |
+|---|---|
+| `index.html` / `Home.html` | Homepage |
+| `services.html` | Travel-services page |
+| `safetyGuide.html` | Travel-safety guide |
+| `Cameron.html`, `Desaru.html`, `semporna.html` | Destination pages |
+| `images/` | Website image assets |
 
-Use HTML for structure, CSS for styling, and basic JavaScript for interactivity (e.g., form validation, dynamic content display).  
+## How to Run
 
-Scope:  
+No installation is required.
 
-Backend functionality (real data processing, user authentication) is not required.  
+1. Clone or download the repository.
+2. Open `index.html` in a web browser.
 
-Focus on clean, intuitive design and usability best practices.  
+For development, you can use the VS Code Live Server extension.
 
-Learning Outcomes:  
+## Scope
 
-Gain hands-on experience in front-end web development.  
+This is a static front-end project. It does not include real bookings, user authentication, payment processing, live hotel or flight data, or backend database integration.
 
-Practice structuring web pages with HTML, styling with CSS, and adding basic interactivity with JavaScript.  
+## Tech Stack
+
+HTML · CSS · JavaScript · Bootstrap
