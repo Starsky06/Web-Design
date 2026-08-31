@@ -1,5 +1,3 @@
-# MYEXPLORE — Malaysia Travel Website
-
 A responsive front-end travel website that introduces Malaysian destinations, travel services, and travel information.
 
 ## Overview
